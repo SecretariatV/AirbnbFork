@@ -12,7 +12,7 @@ const useTimeout = (ms: number) => {
 };
 
 export const Dashboard = () => {
-  useTimeout(1400);
+  useTimeout(104000);
 
   return <div>Dashboard</div>;
 };
