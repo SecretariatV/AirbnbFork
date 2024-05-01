@@ -1,0 +1,31 @@
+.body {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .ring {
+    width: 12px;
+    height: 12px;
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        animation: shake 1s linear #{$i * 0.2}s infinite;
+      }
+    }
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(10px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
