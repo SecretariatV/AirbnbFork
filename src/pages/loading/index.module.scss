@@ -1,0 +1,8 @@
+@use "@styles/globalStyles.scss" as G;
+
+.body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #173e67;
+  @include G.flexCenter;
+}
