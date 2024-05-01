@@ -5,4 +5,10 @@
   height: 100vh;
   background-color: #173e67;
   @include G.flexCenter;
+
+  .logo {
+    @include G.flexAlignCenter;
+    flex-direction: column;
+    gap: 30px;
+  }
 }
