@@ -1,3 +1,5 @@
+import { DashboardHeader } from "@features/layouts";
+
 let fullfilled = false;
 let promise: Promise<void> | null = null;
 const useTimeout = (ms: number) => {
@@ -12,7 +14,12 @@ const useTimeout = (ms: number) => {
 };
 
 export const Dashboard = () => {
-  useTimeout(104000);
+  useTimeout(400);
 
-  return <div>Dashboard</div>;
+  return (
+    <div>
+      <DashboardHeader />
+      <div style={{ height: "1200px" }}></div>
+    </div>
+  );
 };

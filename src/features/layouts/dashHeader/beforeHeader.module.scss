@@ -1,0 +1,257 @@
+@use "@styles/globalStyles.scss" as G;
+
+.body {
+  margin: 14px 14px 0;
+
+  @include G.breakpoint("sm") {
+    margin: 0;
+  }
+
+  button {
+    cursor: pointer;
+    @include G.buttonFormat;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: auto 40px;
+    gap: 10px;
+    min-height: 56px;
+
+    @include G.breakpoint("sm") {
+      display: none;
+    }
+
+    button {
+      padding: 0 4px;
+      border-radius: 1000px;
+      width: 100%;
+      background-color: transparent;
+    }
+
+    .miniWhereBtn {
+      height: 100%;
+      display: grid;
+      align-items: center;
+      grid-template-columns: 54px minmax(0, 1fr);
+      border: 0.5px solid rgba($color: #000000, $alpha: 0.08);
+      box-shadow: 0 3px 10px rgba(0 0 0/0.1);
+
+      .search {
+        display: grid;
+        place-items: center;
+        height: 100%;
+      }
+
+      .searchPad {
+        display: inline-block;
+
+        .title {
+          font-size: 0.875rem;
+          font-weight: 600;
+          line-height: 1.25rem;
+          white-space: nowrap;
+          text-align: left;
+        }
+
+        .list {
+          display: flex;
+          line-height: 1rem;
+          font-size: 0.75rem;
+          color: #6a6a6a;
+          gap: 5px;
+
+          span {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+
+    .miniFilterBtn {
+      @include G.flexCenter;
+      aspect-ratio: 1/1;
+      margin: auto;
+      cursor: pointer;
+      border: 1px solid #b0b0b0;
+    }
+  }
+
+  header {
+    width: 100%;
+    height: 80px;
+    position: relative;
+    z-index: 100;
+    padding: 0 40px;
+    @include G.flexAlignCenter;
+    justify-content: space-between;
+
+    .logo {
+      @include G.flexSetting;
+      position: relative;
+      z-index: 2;
+    }
+
+    .where {
+      text-align: center;
+      padding: 0 24px;
+      min-width: 348px;
+      text-align: center;
+      transition: all 0.3s linear;
+
+      .whereWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        @include G.layoutPadding;
+        padding-bottom: 16px;
+
+        .pannel {
+          max-width: 850px;
+          margin: auto;
+
+          .header {
+            height: 80px;
+            @include G.flexCenter;
+
+            button {
+              margin: 10px 12px;
+              background: transparent;
+              line-height: 1.5rem;
+              font-size: 1rem;
+              font-weight: 400;
+            }
+          }
+
+          .inputs {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 32px;
+            box-shadow: 0 3px 12px 0 rgba($color: #000000, $alpha: 0.1),
+              0 1px 2px 0 rgba($color: #000000, $alpha: 0.08);
+            height: 66px;
+            @include G.flexAlignCenter;
+
+            .inputWrapper {
+              flex: 1 1 0%;
+              display: flex;
+
+              .border {
+                border-right: 1px solid #ddd;
+                align-self: center;
+                height: 32px;
+                flex: 0 0 0;
+              }
+
+              .destination {
+                flex: 1 1.5 0;
+                display: flex;
+
+                label {
+                  background-clip: padding-box;
+                  cursor: pointer;
+                  border-radius: 32px;
+                  padding: 14px 32px;
+                  flex: 1 0 0%;
+
+                  > div {
+                    padding-bottom: 2px;
+                    line-height: 1rem;
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    text-align: left;
+                  }
+
+                  > input {
+                    line-height: 1.125rem;
+                    font-size: 0.875rem;
+                    font-weight: 600;
+                    @include G.buttonFormat;
+                  }
+                }
+              }
+
+              .check {
+                flex: 2 0 0;
+              }
+
+              .guests {
+                flex: 0.95 0 auto;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .anywhere {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 24px;
+      box-shadow: 0 3px 12px 0 rgba($color: #000000, $alpha: 0.1),
+        0 1px 2px 0 rgba($color: #000000, $alpha: 0.08);
+      height: 48px;
+      @include G.flexAlignCenter;
+      flex: 0 1 auto;
+      width: 350px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      button {
+        background-color: white;
+      }
+
+      .position {
+      }
+
+      .week {
+      }
+
+      .guest {
+      }
+    }
+
+    .links {
+      @include G.flexAlignCenter;
+      @include G.flexSetting;
+      justify-content: flex-end;
+      position: relative;
+      z-index: 2;
+
+      .world {
+        width: 42px;
+        aspect-ratio: 1/1;
+        background: transparent;
+      }
+
+      .filter {
+        box-shadow: 0 2px 4px rgba($color: #000000, $alpha: 0.18);
+        background-color: white;
+        border: 1px solid #ddd;
+        line-height: 20px;
+        padding: 8px;
+        border-radius: 30px;
+        @include G.flexAlignCenter;
+        height: 48px;
+
+        .avatar {
+          margin-left: 14px;
+          overflow: hidden;
+          color: #6a6a6a;
+          width: 32px;
+          aspect-ratio: 1/1;
+          flex: 0 0 32px;
+        }
+      }
+    }
+
+    .hide {
+      transform: scaleY(0);
+      display: none;
+    }
+  }
+}

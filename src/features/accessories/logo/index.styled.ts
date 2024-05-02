@@ -26,11 +26,11 @@ const Container = styled.div<ComponentStyleType>`
     }
 
     .eye {
-      transform: rotateZ(-90deg) scaleY(1.5) translateY(2px);
+      transform: rotateZ(-90deg) scaleY(1.5) translateY(0.04em);
     }
 
     .mouth {
-      transform: scale(1.4, 0.6) translateY(2px);
+      transform: scale(1.4, 0.6);
     }
   }
 `;
